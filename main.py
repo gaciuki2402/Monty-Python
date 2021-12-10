@@ -18,5 +18,6 @@ print(name1+"",name2,"will visit Mombasa next week.")
 print("she used to tell me that dreams are valid and the majority of them come true if you work towards them .\nAnd so i will keep on trying now then and work towards achieving them for the sake of what she said.\ni will never give up on dreams unless am dead")
 
 print("4\\5")
+print(4/5*6/7)
 
 print("i will go for a walk at Mariwenyi.\n\tWhen the sun shines up above the sky brightly.")
