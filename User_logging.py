@@ -35,7 +35,6 @@ class Authenticator(object):
                     isLoggedIn=True
                     if isLoggedIn==True:
                         self.Shop()
-
             elif account==2:
                 login=self.login()
                 isLoggedIn=True
