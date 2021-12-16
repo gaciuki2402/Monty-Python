@@ -12,12 +12,10 @@ class Authenticator(object):
         self.attempt_password = input("Password2:")
         self.encodedAttemptPassword = base64.b64encode(self.attempt_password.encode())
         self.decodedAttemptPassword = self.encodedAttemptPassword.decode('utf-8')
-        print(self.decodedAttemptPassword)
         isLoggedIn = False
         if self.attempt_username in self.users:
             self.encodedPassword = base64.b64encode(self.users[self.attempt_username].encode())
             self.decodedPassword = self.encodedPassword.decode('utf-8')
-            print(self.decodedPassword)
             if self.decodedPassword == self.decodedAttemptPassword:
                 print("Login Successful")
                 self.Shop()
@@ -38,9 +36,13 @@ class Authenticator(object):
 
     def Logic(self):
         isLoggedIn = False
+        attempts=3
         while not isLoggedIn:
             login = self.login()
-            break
+            if attempts==1:
+                break
+            attempts-=1
+            print(f"Please try again {attempts} attempt remaining")
 if __name__ == "__main__":
     auth = Authenticator({
         "grace": "password1234",
