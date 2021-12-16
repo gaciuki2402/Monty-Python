@@ -1,10 +1,11 @@
 import base64
-from login import set_salt
+import os
+import pathlib
+
+
 class Authenticator(object):
-    def __init__(self):
-        self.users = {
-            "grace":{"grace"}
-        }
+    def __init__(self,users={}):
+        self.users = users
 
     def add_user(self):
         self.username = input("Username:")
@@ -13,39 +14,55 @@ class Authenticator(object):
             raise ValueError("username already exists!")
         if len(self.password) < 6:
             raise ValueError("Password must be more than 6 values!")
-        self.users[self.username] = self.password
         return True
+
     def login(self):
-        self.attempt_username=input("Username2:")
-        self.attempt_password=input("Password2:")
+        self.attempt_username = input("Username2:")
+        self.attempt_password = input("Password2:")
+        isLoggedIn = False
+        if self.attempt_username in self.users:
+            if self.users[self.attempt_username] == self.attempt_password:
+                print("Login Successful")
+                self.Shop()
+                isLoggedIn = True
+            else:
+                print("Invalid Password")
+                isLoggedIn = False
+        else:
+            print("Invalid Username")
+            isLoggedIn = False
+
     def Shop(self):
         print("Welcome to Gaciuki general shop.")
         print("""
         Bread: Ksh.50\n
         Milk: Ksh. 30 per litre\n
         """)
+
     def Logic(self):
-        account=eval(input("Enter 1 to create account and 2 to login:"))
-        isLoggedIn=False
+        account = eval(input("Enter 1 to create account and 2 to login:"))
+        isLoggedIn = False
         while not isLoggedIn:
-            if account==1:
-                add_user=self.add_user()
-                if add_user==True:
-                    login=self.login()
-                    isLoggedIn=True
-                    if isLoggedIn==True:
-                        self.Shop()
-            elif account==2:
-                login=self.login()
-                isLoggedIn=True
-                if isLoggedIn==True:
-                    self.Shop()
+            if account == 1:
+                add_user = self.add_user()
+                if add_user == True:
+                    login = self.login()
+                    break
+            elif account == 2:
+                login = self.login()
+                break
             else:
                 print("Invalid Choice")
                 break
 
-if __name__=="__main__":
-    auth=Authenticator()
+
+if __name__ == "__main__":
+    auth = Authenticator({
+        "grace": "password1234",
+        "irene":"keepcalm1234",
+        "admin":"admin1234"
+
+        })
     auth.Logic()
 
 #
