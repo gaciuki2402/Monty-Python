@@ -1,0 +1,8 @@
+current_dir = pathlib.Path(os.getcwd())
+        if not os.path.isdir(str(current_dir) + "/Users_data"):
+            os.mkdir("Users_Data")
+        data_dir = str(current_dir) + "/Users_data"
+        os.chdir(data_dir)
+        with open("users.txt","a") as writer:
+            self.users[self.username] += self.password
+            writer.write(f"{self.users}")
