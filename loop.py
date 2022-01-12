@@ -1,12 +1,12 @@
 
 
-i=3
-while i<9:
+i=3#start
+while i<12: #end value =9
     print(i)
-    if i==8:
+    if i==7:
         print('breaking from loop')
         break
-    i+=2
+    i+=2#increment
 
 
 

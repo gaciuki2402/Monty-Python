@@ -1,31 +1,29 @@
 import base64
-import os
-import pathlib
-
 
 class Authenticator(object):
     def __init__(self,users={}):
         self.users = users
 
     def login(self):
+        print("Welcome back,")
         self.attempt_username = input("Username2:")
         self.attempt_password = input("Password2:")
         self.encodedAttemptPassword = base64.b64encode(self.attempt_password.encode())
         self.decodedAttemptPassword = self.encodedAttemptPassword.decode('utf-8')
-        isLoggedIn = False
+        self.isLoggedIn = False
         if self.attempt_username in self.users:
             self.encodedPassword = base64.b64encode(self.users[self.attempt_username].encode())
             self.decodedPassword = self.encodedPassword.decode('utf-8')
             if self.decodedPassword == self.decodedAttemptPassword:
                 print("Login Successful")
                 self.Shop()
-                isLoggedIn = True
+                self.isLoggedIn = True
             else:
-                print("Invalid Password")
-                isLoggedIn = False
+                print("Invalid Credentials.")
+                self.isLoggedIn = False
         else:
-            print("Invalid Username")
-            isLoggedIn = False
+            print("Invalid Credentials.")
+            self.isLoggedIn = False
 
     def Shop(self):
         print("Welcome to Gaciuki general shop.")
@@ -39,18 +37,26 @@ class Authenticator(object):
         attempts=3
         while not isLoggedIn:
             login = self.login()
-            if attempts==1:
+            if self.isLoggedIn==False:
+                if attempts==1:
+                    break
+                attempts-=1
+                print(f"Please try again {attempts} attempt remaining")
+            else:
                 break
-            attempts-=1
-            print(f"Please try again {attempts} attempt remaining")
 if __name__ == "__main__":
     auth = Authenticator({
         "grace": "password1234",
         "irene":"keepcalm1234",
-        "admin":"admin1234"
+        "admin":"admin1234",
 
         })
     auth.Logic()
+
+
+
+
+
 
 #
 # class Authorization(Authenticator):
