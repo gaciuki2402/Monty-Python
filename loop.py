@@ -64,8 +64,8 @@ print(break_loop())
 
 def break_loop():
     for i in range(45,60):
-        if i==60:
-            return i
+        if i==50:
+            return f"i is equal to {i}" #returns the results after execution,meaning it has finished its purpose
         print(i)
 print(break_loop())
 
