@@ -9,7 +9,8 @@ class Employees_List():
             "Tel":"0678986",
             "Email":"gaciuki@gmail",
             "Degree":"Hospitality",
-            "Postal":78
+            "Points":78,
+            "Postal":7865
             },
         "Irene": {
             "RegNo": "KWS0293",
@@ -21,36 +22,36 @@ class Employees_List():
             "Postal_Code": 66200,
             "Points":64
             },
-            "Day": {
-                "RegNo": "KWS0093",
-                "Location": "Nairobi",
-                "Age": 48,
-                "Tel": "074983274",
-                "Email": "day@gmail",
-                "Degree": "Tousism Management",
-                "Postal_Code":324500,
-                "Points":43
+        "Day": {
+            "RegNo": "KWS0093",
+            "Location": "Nairobi",
+            "Age": 48,
+            "Tel": "074983274",
+            "Email": "day@gmail",
+            "Degree": "Tousism Management",
+            "Postal_Code":324500,
+            "Points":43
             },
-            "Belta": {
-                "RegNo": "KWS0113",
-                "Location": "Nairobi",
-                "Age": 24,
-                "Tel": "07490323274",
-                "Email": "belta@gmail",
-                "Degree": "Culinary Arts",
-                "Postal_Code": 32456,
-                "Points":24
+        "Belta": {
+            "RegNo": "KWS0113",
+            "Location": "Nairobi",
+            "Age": 24,
+            "Tel": "07490323274",
+            "Email": "belta@gmail",
+            "Degree": "Culinary Arts",
+            "Postal_Code": 32456,
+            "Points":24
             },
 
-            "Wambui": {
-                "RegNo": "KWS0994",
-                "Location": "Nanyuki",
-                "Age": 34,
-                "Tel": "060323274",
-                "Email": "wambui@gmail",
-                "Degree": "Aeronautical Eng",
-                "Postal_Code": 3200,
-                "Points":94
+         "Wambui": {
+            "RegNo": "KWS0994",
+            "Location": "Nanyuki",
+            "Age": 34,
+            "Tel": "060323274",
+            "Email": "wambui@gmail",
+            "Degree": "Aeronautical Eng",
+            "Postal_Code": 3200,
+            "Points":94
             },
 
         }
@@ -63,7 +64,7 @@ class Employees_List():
             print(f"{employee}---{Points}")
 
     def Junior_Employees(self):
-        print("....JUNIUOR EMPLOYEES....")
+        print("....JUNIOR EMPLOYEES....")
         for employee in self.Employees:
             Points=self.Employees[employee]["Points"]
             if Points>=50:
