@@ -55,11 +55,11 @@ def Interview_List():
     }
     print("KWS NEW EMPLOYEES LIST")
     for interviewee in interviewees:
-        points=interviewees[interviewee]
+        Points=interviewees[interviewee]
         if Points<50:
             continue
         print(f"{interviewee}-{interviewees[interviewee]}")
-print(Interview_List())
+Interview_List()
 print("-"*78)
 
 

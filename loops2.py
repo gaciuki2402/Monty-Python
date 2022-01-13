@@ -116,7 +116,7 @@ def studentPassList():
     print("TTU PASS LIST")
     for student in students:
         marks=students[student]
-        if marks<40:
+        if marks<39:
             continue
         print(f"{student}- {students[student]}")
 
@@ -144,12 +144,6 @@ class PerformanceList:
                 "Course": "BBIt",
                 "Marks": 38
             },
-            "Doe": {
-                "Adm No": "Tu03",
-                "Age": 22,
-                "Course": "BBIt",
-                "Marks": 35
-            },
         }
     def StudentPassList(self):
         print("-----Pass List-----")
@@ -170,4 +164,3 @@ class PerformanceList:
 c1=PerformanceList()
 c1.studentDetails()
 c1.StudentPassList()
-c1.Supplimentary()
